@@ -83,7 +83,7 @@ async function sendPRToTeams({ prMessage }: { prMessage: string }) {
     sendCopyHotkey();
 
     // Wait for the clipboard to be updated
-    await waitFor(100);
+    await waitFor(200);
 
     // Read the text from the clipboard
     const clipboardText = await Clipboard.readText();
@@ -97,7 +97,7 @@ async function sendPRToTeams({ prMessage }: { prMessage: string }) {
     await open(teamsChatUrl, "com.microsoft.teams2");
 
     // Wait for the Teams chat to open
-    await waitFor(500);
+    await waitFor(750);
 
     const message = prMessage
       ? `${prMessage}\n\n${clipboardText}`
